@@ -35,7 +35,7 @@ export default function TransactionHistoryModal({ isOpen, onClose }: Transaction
         const from = page * ITEMS_PER_PAGE;
         const to = from + ITEMS_PER_PAGE - 1;
 
-        const { data, error, count } = await supabase
+        const { data, error: _error, count } = await supabase // <-- FIX IS HERE
           .from('transactions')
           .select('*', { count: 'exact' })
           .eq('user_id', user.id)

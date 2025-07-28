@@ -7,17 +7,16 @@ import { useRouter } from 'next/navigation';
 import Link from 'next/link';
 import Header from '@/components/layout/Header';
 import Footer from '@/components/layout/Footer';
-import { useRedirectIfAuthenticated } from '@/hooks/useRedirectIfAuthenticated'; // <-- Import the hook
+import { useRedirectIfAuthenticated } from '@/hooks/useRedirectIfAuthenticated';
 
 export default function LoginPage() {
-  useRedirectIfAuthenticated(); // <-- Use the hook here
+  useRedirectIfAuthenticated();
 
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [message, setMessage] = useState('');
   const router = useRouter();
 
-  // ... rest of the file is the same ...
   const handleLogin = async (e: React.FormEvent) => {
     e.preventDefault();
     setMessage('');
@@ -72,7 +71,7 @@ export default function LoginPage() {
           </form>
           {message && <p className="text-center text-sm text-red-600 mt-4">{message}</p>}
           <p className="text-center text-sm">
-            Don't have an account?{' '}
+            Don&apos;t have an account?{' '} {/* <-- FIX IS HERE */}
             <Link href="/signup" className="font-medium text-green-600 hover:text-green-500">
               Sign Up
             </Link>

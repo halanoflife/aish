@@ -29,7 +29,7 @@ export default function DepositModal({ isOpen, onClose, onDepositSuccess }: Depo
     }
 
     // Call the Supabase Edge Function
-    const { data, error } = await supabase.functions.invoke('deposit-funds', {
+    const { error } = await supabase.functions.invoke('deposit-funds', { // <-- FIX IS HERE
       body: { amount: depositAmount },
     });
 
