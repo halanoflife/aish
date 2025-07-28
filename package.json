@@ -26,6 +26,6 @@
     "postcss": "^8.5.6",
     "tailwindcss": "^4.1.11",
     "typescript": "^5",
-    "@tailwindcss/postcss": "^4.0.0"  // Make sure there is NO comma after this if it's the LAST item
+    "@tailwindcss/postcss": "^4.0.0"
   }
 }
